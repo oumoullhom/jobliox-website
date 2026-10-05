@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jobliox helps service professionals manage customers, jobs, estimates, invoices, payments, and more.">
+  <title>Jobliox | Manage. Work. Grow.</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      color: #172033;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #e8edf4;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      max-width: 1180px;
+      margin: auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 800;
+      color: #1769e0;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .nav-links a {
+      color: #39445a;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #f4f8ff 0%, #ffffff 60%, #f2fff7 100%);
+      padding: 105px 24px 95px;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #e9f2ff;
+      color: #1769e0;
+      border-radius: 50px;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 70px);
+      line-height: 1.05;
+      letter-spacing: -2px;
+      margin-bottom: 22px;
+      color: #111827;
+    }
+
+    .accent {
+      color: #1769e0;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto 34px;
+      font-size: 20px;
+      color: #5c667a;
+    }
+
+    .button {
+      display: inline-block;
+      background: #1769e0;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-weight: 700;
+      margin: 6px;
+    }
+
+    .button.secondary {
+      background: #ffffff;
+      color: #1769e0;
+      border: 1px solid #cfdcf1;
+    }
+
+    section {
+      padding: 90px 24px;
+    }
+
+    .section-container {
+      max-width: 1120px;
+      margin: auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 55px;
+    }
+
+    .section-heading h2 {
+      font-size: 38px;
+      margin-bottom: 14px;
+      color: #111827;
+    }
+
+    .section-heading p {
+      color: #667085;
+      font-size: 18px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .feature-card {
+      border: 1px solid #e3e9f2;
+      border-radius: 16px;
+      padding: 28px;
+      background: #ffffff;
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: #eaf2ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 23px;
+      margin-bottom: 18px;
+    }
+
+    .feature-card h3 {
+      margin-bottom: 9px;
+      font-size: 19px;
+    }
+
+    .feature-card p {
+      color: #667085;
+      font-size: 15px;
+    }
+
+    .business-section {
+      background: #f7f9fc;
+    }
+
+    .business-box {
+      max-width: 950px;
+      margin: auto;
+      background: #1769e0;
+      color: white;
+      padding: 60px;
+      border-radius: 22px;
+      text-align: center;
+    }
+
+    .business-box h2 {
+      font-size: 38px;
+      margin-bottom: 16px;
+    }
+
+    .business-box p {
+      max-width: 700px;
+      margin: auto;
+      font-size: 18px;
+      opacity: 0.92;
+    }
+
+    .coming-soon {
+      text-align: center;
+    }
+
+    .coming-soon h2 {
+      font-size: 38px;
+      margin-bottom: 15px;
+    }
+
+    .coming-soon p {
+      color: #667085;
+      max-width: 650px;
+      margin: auto;
+      font-size: 18px;
+    }
+
+    footer {
+      border-top: 1px solid #e8edf4;
+      padding: 40px 24px;
+      color: #667085;
+    }
+
+    .footer-container {
+      max-width: 1120px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    footer a {
+      color: #4d5b73;
+      text-decoration: none;
+      margin-left: 18px;
+    }
+
+    @media (max-width: 800px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 75px;
+      }
+
+      .business-box {
+        padding: 42px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <nav>
+    <a href="#" class="logo">Jobliox</a>
+
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#business">For Businesses</a>
+      <a href="#app">Get Jobliox</a>
+      <a href="mailto:contact@jobliox.app">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-content">
+      <div class="badge">Built for service professionals</div>
+
+      <h1>
+        Manage. Work. <span class="accent">Grow.</span>
+      </h1>
+
+      <p>
+        Jobliox gives independent professionals and small service businesses
+        one simple place to manage customers, jobs, estimates, invoices,
+        payments, and more.
+      </p>
+
+      <a href="#app" class="button">Get Jobliox</a>
+      <a href="#features" class="button secondary">Explore Features</a>
+    </div>
+  </section>
+
+  <section id="features">
+    <div class="section-container">
+
+      <div class="section-heading">
+        <h2>Everything you need to stay organized</h2>
+        <p>
+          Spend less time managing paperwork and more time running your business.
+        </p>
+      </div>
+
+      <div class="features">
+
+        <div class="feature-card">
+          <div class="feature-icon">👥</div>
+          <h3>Customers</h3>
+          <p>Keep customer information and important business records organized in one place.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🧰</div>
+          <h3>Jobs</h3>
+          <p>Create, schedule, organize, and track your service jobs from start to finish.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📝</div>
+          <h3>Estimates</h3>
+          <p>Create professional estimates, capture customer acceptance, and convert approved estimates into invoices.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">🧾</div>
+          <h3>Invoices</h3>
+          <p>Create and share professional invoices while keeping payment status easy to understand.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">💳</div>
+          <h3>Payments</h3>
+          <p>Record full or partial payments, track balances, and maintain payment and refund history.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Business Reports</h3>
+          <p>See key business totals and financial information without complicated software.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="business" class="business-section">
+    <div class="business-box">
+      <h2>Built for small service businesses</h2>
+      <p>
+        Whether you clean homes, repair equipment, paint, landscape,
+        provide electrical or plumbing services, handle mobile detailing,
+        or run another service business, Jobliox helps keep your work organized.
+      </p>
+    </div>
+  </section>
+
+  <section id="app">
+    <div class="section-container coming-soon">
+      <h2>Jobliox is coming soon.</h2>
+      <p>
+        We're preparing Jobliox for launch. The mobile app will be available
+        for service professionals looking for a simpler way to manage their
+        day-to-day business.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-container">
+    <div>
+      © 2026 JOBLIOX LLC. All rights reserved.
+    </div>
+
+    <div>
+      <a href="https://privacy.jobliox.app/">Privacy Policy</a>
+      <a href="mailto:contact@jobliox.app">Contact</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
